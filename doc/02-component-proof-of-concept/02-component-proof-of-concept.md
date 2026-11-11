@@ -1,8 +1,8 @@
 # Portfolio Part 2: Component Proof-of-Concept
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Srijani Tirunagiri
+- **Dot Number**: tirunagiri.1
+- **Due Date**: 10/13 @ 3:00 PM EST
 
 ## Assignment Overview
 
@@ -73,7 +73,7 @@ project. Specifically, students should be able to:
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
 are meant to provide ongoing feedback in the learning process. Therefore,
-the rubric is designed to assess the learning objectives *directly* in a way
+the rubric is designed to assess the learning objectives _directly_ in a way
 that is low stakes—meaning you shouldn't have to worry about the grade. Just
 do good work.
 
@@ -114,8 +114,9 @@ Below is further rationale/explanation for the rubric items above:
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
 
-<!-- TODO: briefly argue your choice of design or design something
-new; then delete this comment -->
+```
+I chose the first design because I wanted the smallest design that still does something useful. THere are only 5 kernel method on a set of integers. Every secondary method can be written using only the kernel methods. Design #2 can only edit the most recent day, but people forget to log their habits all the time. Being able to add or remove any day makes Design #1 more realistic. Room to grow: a client can still track several habits by using a `Map<String, HabitStreakTracker>`, so I don't lose the idea behind Design #3.I'd actually use this to track my own habits, which keeps me motivated to polish it.
+```
 
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
@@ -177,7 +178,6 @@ the following form: YYYY.0M.0D.
 ### Updated
 
 - Changed design to include ...
-
 ```
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.

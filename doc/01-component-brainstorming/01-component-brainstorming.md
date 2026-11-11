@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Srijani Tirunagiri
+- **Dot Number**: tirunagiri.1
+- **Due Date**: 10/13 @ 3:00 PM EST
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -67,12 +61,10 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<!-- TODO: read the assignment rubric then delete this comment -->
-
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
 are meant to provide ongoing feedback in the learning process. Therefore,
-the rubric is designed to assess the learning objectives *directly* in a way
+the rubric is designed to assess the learning objectives _directly_ in a way
 that is low stakes—meaning you shouldn't have to worry about the grade. Just
 do good work.
 
@@ -106,23 +98,19 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+```
+I work at a Driving Simulation Lab in OSU. We work a lot with data, so most of the work is processing datasets and building or improving small tools that help researchers make sense of their data. I really enjoy turning raw records into something useful, like a summary, a plot, or a pattern.
+
+I want to make something where you can track your habits. So, like a habit streak tracker. Maybe I can use Map and either Set or Sequence. Like for Map, I can have one variable for Logs and the other for dates. The Set or Sequence can be the dates.
+```
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -142,8 +130,6 @@ list-like components that have different ways of manipulating the data. Think
 about different ways you might allow a client to manipulate your component.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -168,7 +154,7 @@ format, we can be more confident that your designs will be possible.
     - `NaturalNumber divide(NaturalNumber n)`: divides `this` by `n`, returning
       the remainder
     - ...
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+  - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
       - Yes, basically all OSU components have to be mutable as long as they
@@ -180,7 +166,7 @@ format, we can be more confident that your designs will be possible.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
       - Yes. NaturalNumber is base 10, and we track that in a constant called
-          `RADIX`.
+        `RADIX`.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
       - Yes. The kernel methods `multiplyBy10` and `divideBy10` can be used to
@@ -211,68 +197,90 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: `HabitStreakTracker`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - the purpose of the component is to keep track of a habit as the set of days on that were completed. The 'Days' are integers and the 'back-to-back days' are back-to-back integers. The kernel records and removes the days and the secondary interface gives the streak and the progress stats.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addLogDay(int day)`: this adds 'day' into the set of the completed days.
+    - `void removeLogDay(int day)`: this removes 'day' into the set of the completed days.
+    - `int removeAny()`: removes and returns an arbitrary looged day.
+    - `boolean hasLogged(int day)`: returns if 'day' is logged or not.
+    - `int size()`: returns the number of logged days.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    - `int currentStreak(int today)`: returns the number of back-to-back logged days ending on 'today'.
+    - `int longestStreak()`: returns the length of the longest back-to-back logged days.
+    - `int firstDay()`: returns the first logged day.
+    - `int lastDay()`: returns the recent logged day.
+  - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't think so. Because the method shoudl work with `int` days, `boolean`, or a `double`.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know. I assume no.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. like `firstDay` can use `removeAny` to pull out every day and keep track of the minimum, and then `addlogDay` each one back so `this` is restored.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: `HabitSequence`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose for the component is to model a habit as a sequence of boolenas, one per day because the habit started where `true` means the habit was completed on that day. Instead of entering the dates to log the habits, the client 'closes out' each day in order. Easy to reach the recent days, but can't edit a day in the far past.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addDay(boolean completed)`: adds a new day to the end of the tracker.
+    - `boolean removeLastDay()`: removes the last day and returns if it was completed or not.
+    - `int length()`: returns the number of days in the tracker.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    - `int currentStreak()`: returns the number of back-to-back completed days at the end of the tracker
+    - `int longestStreak()`: returns the longest run of completed days
+    - `int completedDays()`: returns how many days were completed
+    - `double completionRate()`: returns `completedDays() / length()`
+    - `void setLastDay(boolean completed)`: changes if the most recent day was completed.
+  - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't think so.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. `currentStreak` can repeatedly call `removeLastDay` while it returns true, counting as it goes, storing the removed days, and then put them back with `addDay`.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: `HabitLog`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose for the component is to track mulitple habits at the same time, like 'drinking water', reading, 'walking', and etc. Each habit has a name and a set of days on which it was completed.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `void addHabit(String name)`: adds a new habit without the logged days.
+    - `void logDay(String name, int day)`: marks `day` as completed for habit `name`.
+    - `HabitLog.Entry removeAnyEntry()`: removes and returns an arbitrary entry.
+    - `boolean hasLogged(String name, int day)`: returns if habit `name` was completed or not on `day`.
+    - `int numberOfEntries()`: returns the total number of logged entries.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    - `int currentStreak(String name, int today)`: returns the current streak for a habit.
+    - `int longestStreak(String name)`: returns the longest streak for a habit.
+    - `int habitsCompletedOn(int day)`: return how many habits were completed on `day`.
+    - `boolean allCompletedOn(int day)`: returns if every habit was completed on `day`.
+    - `void removeHabit(String name)`: removes a habit and all its entries.
+    - `boolean hasHabit(String name)`: returns if `name` is a habit or not.
+  - **Additional Considerations** (_note_: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't know
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, `removeAnyEntry` needs to return both a name and a day, like `Map.Pair`.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I don't think so.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Mostly. `currentStreak(name, today)` works the same way as in Design #1 using `hasLogged(name, today - k)`
 
 ## Post-Assignment
 
@@ -280,8 +288,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -299,13 +305,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## YYYY.MM.DD
+## 2026.10.28
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a HabitStreakTracker component
+- Designed a HabitSequence component
+- Designed a HabitLog component
 ```
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
@@ -320,8 +326,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -333,8 +337,6 @@ you have to submit any PDFs.
 <!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -360,8 +362,6 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
