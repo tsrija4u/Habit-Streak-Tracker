@@ -6,7 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## 2026.11.11
+## 2026.11.01
+
+### Added
+
+- Designed abstract class for HabitStreakTracker component
+
+### Updated
+
+- Changed design to implement `equals`, `hashCode`, and `toString` in the
+  secondary class using only kernel methods
+- Changed `toString` to list days in increasing order, e.g., `{1, 2, 3}`
+
+## 2026.11.01
 
 ### Added
 
