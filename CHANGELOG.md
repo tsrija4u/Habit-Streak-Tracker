@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## 2026.11.11
+
+### Added
+
+- Designed kernel and enhanced interfaces for HabitStreakTracker component
+
+### Updated
+
+- Changed design to inherit `clear` and `transferFrom` from `Standard`
+  instead of declaring them in the component
+- Changed design to add contracts (`@requires`, `@ensures`, `@updates`) to
+  every method
+
 ## 2026.10.31
 
 ### Added
